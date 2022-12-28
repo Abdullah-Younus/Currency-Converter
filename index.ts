@@ -18,7 +18,7 @@ let Converters = {
     }
 }
 
-const answer: { from: string, to: string, amount: number } = await inquirer.prompt([
+const answer: { from: "PKR" | "GBP" | "USD" , to:  "PKR" | "GBP" | "USD", amount: number } = await inquirer.prompt([
     {
         type: 'list',
         name: 'from',
@@ -36,4 +36,17 @@ const answer: { from: string, to: string, amount: number } = await inquirer.prom
         name: 'amount',
         message: 'Enter Your convertion amount:'
     }
-])
+]);
+
+const { from, to, amount } = answer;
+
+if (from && to && amount) {
+
+    Converters[from][to]
+
+    
+
+
+} else {
+    console.log('Invalid Inputs');
+}
